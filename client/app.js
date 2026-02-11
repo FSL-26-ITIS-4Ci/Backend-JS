@@ -1,6 +1,5 @@
 const status = document.getElementById("status");
 const searchArea = document.getElementById("searchArea");
-const field = document.getElementById("result");
 const tagSelect = document.getElementById("tagSelect");
 const platformSelect = document.getElementById("platformSelect");
 const ws = new WebSocket("ws://localhost:8080");
@@ -16,27 +15,28 @@ function waitForConnection() {
   });
 }
 
-function waitForGames() {
-  return new Promise((resolve) => {
-    ws.onmessage = (event) => {
-      games = JSON.parse(event.data);
-      resolve(games);
-    };
-  });
-}
-
 async function init() {
   await waitForConnection();
+
   ws.onmessage = (event) => {
     const data = JSON.parse(event.data);
-    if (data.type != "initialFilters") return;
-    data.tags.forEach((tag) => {
-      tagSelect.innerHTML += `<input type="checkbox" id="${tag}" name="${tag}" value="${tag}">\n<label for="${tag}">${tag}</label><br>`;
-    });
 
-    data.piattaforme.forEach((piattaforma) => {
-      platformSelect.innerHTML += `<input type="checkbox" id="${piattaforma}" name="${piattaforma}" value="${piattaforma}">\n<label for="${piattaforma}">${piattaforma}</label><br>`;
-    });
+    if (data.type === "gamesList") {
+      console.log(data.value);
+      games = data.value;
+      renderGames(data.value);
+    } else if (data.type === "initialFilters") {
+      data.tags.forEach((tag) => {
+        tagSelect.innerHTML += `<input type="checkbox" id="${tag}" name="${tag}" value="${tag}">
+        <label for="${tag}">${tag}</label><br>`;
+      });
+      data.piattaforme.forEach((piattaforma) => {
+        platformSelect.innerHTML += `<input type="checkbox" id="${piattaforma}" name="${piattaforma}" value="${piattaforma}">
+        <label for="${piattaforma}">${piattaforma}</label><br>`;
+      });
+    } else if (data.type === "search") {
+      renderGames(data.value);
+    }
   };
 }
 
@@ -53,17 +53,31 @@ ws.onclose = () => {
 };
 
 async function cerca() {
-  field.innerHTML;
   ws.send(
     JSON.stringify({
       type: "search",
       value: searchArea.value,
     }),
   );
-  ws.onmessage = (event) => {
-    field.innerHTML = null;
-    const data = JSON.parse(event.data);
-    if (data.type != "search") return;
-    field.innerHTML += JSON.stringify(data.value);
-  };
+}
+
+function createGameCard(game) {
+  return `
+    <div class="game-card">
+      <h2>${game.nome}</h2>
+      <p>${game.studio}</p>
+      <div>
+        ${game.tag.map((tag) => `<span>${tag}</span>`).join(", ")}
+      </div>
+      <p>Price: €${game.prezzo}</p>
+      <p>Platforms: ${game.piattaforme.join(", ")}</p>
+      <p>PEGI: ${game.pegi}</p>
+      <p>Cross-Play: ${game.crossPlay ? "Yes" : "No"}</p>
+    </div>
+  `;
+}
+
+function renderGames(gamesList) {
+  const gamesGrid = document.getElementById("gamesGrid");
+  gamesGrid.innerHTML = gamesList.map((game) => createGameCard(game)).join("");
 }

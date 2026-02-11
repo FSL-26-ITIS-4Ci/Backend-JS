@@ -14,6 +14,17 @@ try {
 
 wss.on("connection", (ws) => {
   console.log("New client connected");
+  try {
+    console.log("LOG: Sending the client the games list");
+    ws.send(
+      JSON.stringify({
+        type: "gamesList",
+        value: games,
+      }),
+    );
+  } catch (error) {
+    console.error("Failed to send games:", error.message);
+  }
 
   const setTag = new Set();
   games.forEach((element) => {
