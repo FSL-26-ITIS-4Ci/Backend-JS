@@ -10,7 +10,7 @@
   },
   {
     "nome": "Dark Souls",
-    "tag": [ "Soulslike", "challenging", "combat", "singleplayer"],
+    "tag": ["Soulslike", "challenging", "combat", "singleplayer"],
     "prezzo": "39.99",
     "studio": "FromSoftware",
     "piattaforme": ["PS3", "Xbox 360", "PC"],
@@ -19,7 +19,14 @@
   },
   {
     "nome": "Stardew Valley",
-    "tag": ["Simulation", "Farming", "Indie", "cozy", "crafting", "singleplayer"],
+    "tag": [
+      "Simulation",
+      "Farming",
+      "Indie",
+      "cozy",
+      "crafting",
+      "singleplayer"
+    ],
     "prezzo": "13.99",
     "studio": "ConcernedApe",
     "piattaforme": ["PC", "Nintendo Switch", "PS4", "Xbox One"],
@@ -37,7 +44,13 @@
   },
   {
     "nome": "Overwatch",
-    "tag": ["Shooter", "Hero Shooter", "multiplayer", "competitive", "team-based"],
+    "tag": [
+      "Shooter",
+      "Hero Shooter",
+      "multiplayer",
+      "competitive",
+      "team-based"
+    ],
     "prezzo": "39.99",
     "studio": "Blizzard Entertainment",
     "piattaforme": ["PC", "PS4", "Xbox One", "Switch"],
@@ -73,7 +86,13 @@
   },
   {
     "nome": "Celeste",
-    "tag": ["Platformer", "Indie", "precision-platforming", "singleplayer", "story"],
+    "tag": [
+      "Platformer",
+      "Indie",
+      "precision-platforming",
+      "singleplayer",
+      "story"
+    ],
     "prezzo": "19.99",
     "studio": "Maddy Makes Games",
     "piattaforme": ["PC", "Switch", "PS4", "Xbox One"],
