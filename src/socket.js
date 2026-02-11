@@ -19,19 +19,41 @@ wss.on("connection", (ws) => {
   ws.on("message", (message) => {
     try {
       const data = JSON.parse(message);
+      switch (data.type) {
+        case "search":
+          const r = data.value.toLowerCase().trim();
+          const risultati = games.filter((item) => {
+            return item.nome.toLowerCase().trim().includes(r);
+          });
 
-      const referencePlatforms = normalizeSet(data.platforms);
-      const referenceTags = normalizeSet(data.tags);
-      const referenceSet = new Set([...referencePlatforms, ...referenceTags]);
+          ws.send(
+            JSON.stringify({
+              type: "search",
+              value: risultati,
+            }),
+          );
+          break;
+        default:
+          const referencePlatforms = normalizeSet(data.platforms);
+          const referenceTags = normalizeSet(data.tags);
+          const referenceSet = new Set([
+            ...referencePlatforms,
+            ...referenceTags,
+          ]);
 
-      const topMatches = getTopMatches(games, referenceSet, data.count || 10);
+          const topMatches = getTopMatches(
+            games,
+            referenceSet,
+            data.count || 10,
+          );
 
-      ws.send(
-        JSON.stringify({
-          success: true,
-          matches: topMatches,
-        }),
-      );
+          ws.send(
+            JSON.stringify({
+              success: true,
+              matches: topMatches,
+            }),
+          );
+      }
     } catch (error) {
       ws.send(
         JSON.stringify({
