@@ -55,10 +55,6 @@ ws.onerror = (error) => {
 ws.onclose = () => {
   status.textContent = "Disconnected from server";
   status.style.color = "red";
-
-  setInterval(() => {
-    location.reload();
-  }, 5);
 };
 
 async function cerca() {

@@ -21,6 +21,7 @@ wss.on("connection", (ws) => {
       const data = JSON.parse(message);
       switch (data.type) {
         case "search":
+          console.log(`RECEIVED: ${data.value}`);
           const r = data.value.toLowerCase().trim();
           const risultati = games.filter((item) => {
             return item.nome.toLowerCase().trim().includes(r);
