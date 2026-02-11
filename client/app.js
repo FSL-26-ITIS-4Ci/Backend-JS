@@ -1,7 +1,8 @@
 const status = document.getElementById("status");
-const form = document.getElementById("form");
 const searchArea = document.getElementById("searchArea");
 const field = document.getElementById("result");
+const tagSelect = document.getElementById("tagSelect");
+const platformSelect = document.getElementById("platformSelect");
 const ws = new WebSocket("ws://localhost:8080");
 let games;
 
@@ -26,23 +27,17 @@ function waitForGames() {
 
 async function init() {
   await waitForConnection();
-  const games = await waitForGames();
-
-  const setTag = new Set();
-  games.forEach((element) => {
-    element.tag.forEach((tag) => {
-      let tempTag = tag.toLowerCase().trim();
-      tempTag = tempTag[0].toUpperCase() + tempTag.substring(1);
-      setTag.add(tempTag);
+  ws.onmessage = (event) => {
+    const data = JSON.parse(event.data);
+    if (data.type != "initialFilters") return;
+    data.tags.forEach((tag) => {
+      tagSelect.innerHTML += `<input type="checkbox" id="${tag}" name="${tag}" value="${tag}">\n<label for="${tag}">${tag}</label><br>`;
     });
-  });
 
-  const arrSetTag = Array.from(setTag);
-  arrSetTag.sort();
-
-  arrSetTag.forEach((tag) => {
-    form.innerHTML += `<input type="checkbox" id="${tag}" name="${tag}" value="${tag}">\n<label for="${tag}">${tag}</label><br>`;
-  });
+    data.piattaforme.forEach((piattaforma) => {
+      platformSelect.innerHTML += `<input type="checkbox" id="${piattaforma}" name="${piattaforma}" value="${piattaforma}">\n<label for="${piattaforma}">${piattaforma}</label><br>`;
+    });
+  };
 }
 
 init();
@@ -65,12 +60,10 @@ async function cerca() {
       value: searchArea.value,
     }),
   );
-
   ws.onmessage = (event) => {
     field.innerHTML = null;
     const data = JSON.parse(event.data);
     if (data.type != "search") return;
-
     field.innerHTML += JSON.stringify(data.value);
   };
 }

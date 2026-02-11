@@ -14,7 +14,38 @@ try {
 
 wss.on("connection", (ws) => {
   console.log("New client connected");
-  ws.send(JSON.stringify(games));
+
+  const setTag = new Set();
+  games.forEach((element) => {
+    element.tag.forEach((tag) => {
+      let tempTag = tag.toLowerCase().trim();
+      tempTag = tempTag[0].toUpperCase() + tempTag.substring(1);
+      setTag.add(tempTag);
+    });
+  });
+
+  const arrSetTag = Array.from(setTag);
+  arrSetTag.sort();
+
+  const setPiat = new Set();
+  games.forEach((element) => {
+    element.piattaforme.forEach((piattaforma) => {
+      let tempPiat = piattaforma.toLowerCase().trim();
+      tempPiat = tempPiat[0].toUpperCase() + tempPiat.substring(1);
+      setPiat.add(tempPiat);
+    });
+  });
+
+  const arrSetPiat = Array.from(setPiat);
+  arrSetPiat.sort();
+
+  ws.send(
+    JSON.stringify({
+      type: "initialFilters",
+      piattaforme: arrSetPiat,
+      tags: arrSetTag,
+    }),
+  );
 
   ws.on("message", (message) => {
     try {
