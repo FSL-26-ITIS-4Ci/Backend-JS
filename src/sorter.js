@@ -2,7 +2,10 @@ const fs = require("fs");
 const path = require("path");
 
 function normalizeSet(arr) {
-  return Array.from(arr || []).map((item) => String(item).toLowerCase().trim());
+  const normalized = Array.from(arr || [])
+    .map((item) => String(item).toLowerCase().trim())
+    .filter((item) => item.length > 0);
+  return normalized;
 }
 
 function jaccard(setA, setB) {
@@ -16,7 +19,10 @@ function jaccard(setA, setB) {
 
 function calculateSimilarity(game, referenceSet) {
   if (!game) return 0;
-  const gameSet = new Set([...(game.piattaforme || []), ...(game.tag || [])]);
+  const gameSet = new Set([
+    ...normalizeSet(game.piattaforme || []),
+    ...normalizeSet(game.tag || []),
+  ]);
   const jaccardScore = jaccard(gameSet, referenceSet);
   return Math.round(jaccardScore * 100);
 }
