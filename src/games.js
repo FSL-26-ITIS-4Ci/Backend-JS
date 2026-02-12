@@ -26,8 +26,10 @@ function handleSearch(ws, games, data) {
 
   const searchTerm = (data.value || data.searchTerm || "").toLowerCase().trim();
   if (searchTerm) {
-    risultati = risultati.filter((item) =>
-      item.nome.toLowerCase().trim().includes(searchTerm),
+    risultati = risultati.filter(
+      (item) =>
+        item.nome.toLowerCase().trim().includes(searchTerm) ||
+        item.desc.toLowerCase().includes(searchTerm),
     );
   }
 
