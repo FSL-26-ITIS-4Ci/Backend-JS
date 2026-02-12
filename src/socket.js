@@ -29,9 +29,7 @@ wss.on("connection", (ws) => {
   const setTag = new Set();
   games.forEach((element) => {
     element.tag.forEach((tag) => {
-      let tempTag = tag.toLowerCase().trim();
-      tempTag = tempTag[0].toUpperCase() + tempTag.substring(1);
-      setTag.add(tempTag);
+      setTag.add(capitalize(tag));
     });
   });
 
@@ -41,9 +39,7 @@ wss.on("connection", (ws) => {
   const setPiat = new Set();
   games.forEach((element) => {
     element.piattaforme.forEach((piattaforma) => {
-      let tempPiat = piattaforma.toLowerCase().trim();
-      tempPiat = tempPiat[0].toUpperCase() + tempPiat.substring(1);
-      setPiat.add(tempPiat);
+      setPiat.add(capitalize(piattaforma));
     });
   });
 
@@ -115,5 +111,10 @@ wss.on("connection", (ws) => {
     console.error("WebSocket error:", error);
   });
 });
+
+function capitalize(str) {
+  const s = String(str).toLowerCase().trim();
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
 
 console.log("WebSocket server running on ws://localhost:8080");
