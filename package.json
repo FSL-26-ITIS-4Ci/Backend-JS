@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/FSL-26-ITIS-4Ci/Backend-JS#readme",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "ws": "^8.19.0"
   }
 }
