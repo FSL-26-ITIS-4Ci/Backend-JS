@@ -1,4 +1,4 @@
-const status = document.getElementById("status");
+const stato = document.getElementById("status");
 const searchArea = document.getElementById("searchArea");
 const tagSelect = document.getElementById("tagSelect");
 const platformSelect = document.getElementById("platformSelect");
@@ -8,8 +8,8 @@ let games;
 function waitForConnection() {
   return new Promise((resolve) => {
     ws.onopen = () => {
-      status.textContent = "Connected to server";
-      status.style.color = "green";
+      stato.textContent = "Connected to server";
+      stato.style.color = "green";
       resolve();
     };
   });
@@ -39,13 +39,13 @@ async function init() {
 init();
 
 ws.onerror = (error) => {
-  status.textContent = "Error: " + error.message;
-  status.style.color = "red";
+  stato.textContent = "Error: " + error.message;
+  stato.style.color = "red";
 };
 
 ws.onclose = () => {
-  status.textContent = "Disconnected from server";
-  status.style.color = "red";
+  stato.textContent = "Disconnected from server";
+  stato.style.color = "red";
 };
 
 async function cerca() {
