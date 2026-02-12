@@ -32,6 +32,11 @@ function sortBySimilarity(games, referenceSet) {
   const copy = [...games];
   for (const game of copy) {
     game.affinity = calculateSimilarity(game, referenceSet);
+    game.common = Array.from(
+      new Set(
+        [...game.tag, ...game.piattaforme].filter((x) => referenceSet.has(x)),
+      ),
+    );
   }
   copy.sort((a, b) => b.affinity - a.affinity);
   return copy;
