@@ -1,7 +1,23 @@
 const WebSocket = require("ws");
 const { readGames, getTopMatches, normalizeSet } = require("./sorter");
 
-const wss = new WebSocket.Server({ port: 8080 });
+const wss = new WebSocket.Server({
+  port: 8080,
+  verifyClient: (info) => {
+    const origin = info.origin;
+    const allowedOrigins = [
+      "http://localhost:5500",
+      "http://127.0.0.1:5500",
+      "https://backend-js-o2lj.onrender.com",
+    ];
+
+    if (!origin) return true;
+
+    return allowedOrigins.some((allowed) =>
+      allowed instanceof RegExp ? allowed.test(origin) : allowed === origin,
+    );
+  },
+});
 
 let games;
 try {
