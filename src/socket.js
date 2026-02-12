@@ -59,39 +59,45 @@ wss.on("connection", (ws) => {
       const data = JSON.parse(message);
       switch (data.type) {
         case "search":
-          console.log(`RECEIVED: ${data.value}`);
-          const r = data.value.toLowerCase().trim();
-          const risultati = games.filter((item) => {
-            return item.nome.toLowerCase().trim().includes(r);
-          });
+          console.log(`RECEIVED: ${data.value || "filter update"}`);
+
+          let risultati = games;
+
+          const searchTerm = (data.value || data.searchTerm || "")
+            .toLowerCase()
+            .trim();
+          if (searchTerm) {
+            risultati = risultati.filter((item) => {
+              return item.nome.toLowerCase().trim().includes(searchTerm);
+            });
+          }
+
+          if (data.platforms?.length || data.tags?.length) {
+            console.log(`RECEIVED TAGS: ${data.tags}`);
+            console.log(`RECEIVED PLATFORMS: ${data.platforms}`);
+            const referencePlatforms = normalizeSet(data.platforms || []);
+            const referenceTags = normalizeSet(data.tags || []);
+            const referenceSet = new Set([
+              ...referencePlatforms,
+              ...referenceTags,
+            ]);
+            risultati = getTopMatches(
+              risultati,
+              referenceSet,
+              data.count || risultati.length,
+            );
+          }
 
           ws.send(
             JSON.stringify({
-              type: "search",
+              type: data.type,
               value: risultati,
             }),
           );
           break;
+
         default:
-          const referencePlatforms = normalizeSet(data.platforms);
-          const referenceTags = normalizeSet(data.tags);
-          const referenceSet = new Set([
-            ...referencePlatforms,
-            ...referenceTags,
-          ]);
-
-          const topMatches = getTopMatches(
-            games,
-            referenceSet,
-            data.count || 10,
-          );
-
-          ws.send(
-            JSON.stringify({
-              success: true,
-              matches: topMatches,
-            }),
-          );
+          console.log("ERROR: Invalid request");
       }
     } catch (error) {
       ws.send(
