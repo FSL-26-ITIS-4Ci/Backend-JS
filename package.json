@@ -4,7 +4,8 @@
   "description": "",
   "main": "src/socket.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node src/cli.js",
+    "start": "node src/socket.js"
   },
   "repository": {
     "type": "git",
