@@ -73,8 +73,13 @@ wss.on("connection", (ws) => {
           }
 
           if (data.platforms?.length || data.tags?.length) {
-            console.log(`RECEIVED TAGS: ${data.tags}`);
-            console.log(`RECEIVED PLATFORMS: ${data.platforms}`);
+            console.log(
+              "RECEIVED TAGS: " + (data.tags.length ? data.tags : "None"),
+            );
+            console.log(
+              "RECEIVED PLATFORMS: " +
+                (data.platforms.length ? data.platforms : "None"),
+            );
             const referencePlatforms = normalizeSet(data.platforms || []);
             const referenceTags = normalizeSet(data.tags || []);
             const referenceSet = new Set([
