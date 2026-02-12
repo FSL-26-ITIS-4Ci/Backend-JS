@@ -21,9 +21,7 @@ async function init() {
   ws.onmessage = (event) => {
     const data = JSON.parse(event.data);
 
-    if (data.type === "gamesList") {
-      console.log(data.value);
-      games = data.value;
+    if (data.type === "gamesList" || data.type === "search") {
       renderGames(data.value);
     } else if (data.type === "initialFilters") {
       data.tags.forEach((tag) => {
@@ -34,8 +32,6 @@ async function init() {
         platformSelect.innerHTML += `<input type="checkbox" id="${piattaforma}" name="${piattaforma}" value="${piattaforma}">
         <label for="${piattaforma}">${piattaforma}</label><br>`;
       });
-    } else if (data.type === "search") {
-      renderGames(data.value);
     }
   };
 }
