@@ -48,6 +48,16 @@ function handleSearch(ws, games, data) {
     );
   }
 
+  if (data.crossPlay === "si") {
+    risultati = risultati.filter((item) => {
+      return item.crossPlay;
+    });
+  } else if (data.crossPlay === "no") {
+    risultati = risultati.filter((item) => {
+      return !item.crossPlay;
+    });
+  }
+
   ws.send(JSON.stringify({ type: data.type, value: risultati }));
 }
 
