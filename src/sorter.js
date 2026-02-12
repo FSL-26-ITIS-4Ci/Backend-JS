@@ -11,7 +11,6 @@ function jaccard(setA, setB) {
   if (a.size === 0 && b.size === 0) return 0.0;
   const intersection = new Set([...a].filter((x) => b.has(x)));
   const union = new Set([...a, ...b]);
-  if (union.size === 0) return 0.0;
   return intersection.size / union.size;
 }
 
