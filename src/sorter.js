@@ -27,11 +27,7 @@ function sortBySimilarity(games, referenceSet) {
   for (const game of copy) {
     game.affinity = calculateSimilarity(game, referenceSet);
   }
-  copy.sort((a, b) => {
-    const affinityA = a.affinity || 0;
-    const affinityB = b.affinity || 0;
-    return affinityB - affinityA;
-  });
+  copy.sort((a, b) => b.affinity - a.affinity);
   return copy;
 }
 
