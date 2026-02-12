@@ -13,7 +13,7 @@ function printTopMatches(games, count) {
 try {
   const games = readGames("../resources/games.json");
 
-  const preferences = normalizeSet(["RPG", "PC", "Adventure"]);
+  const preferences = new Set(normalizeSet(["RPG", "PC", "Adventure"]));
 
   const topMatches = getTopMatches(games, preferences, 10);
   printTopMatches(topMatches, 10);
