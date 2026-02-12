@@ -2,18 +2,24 @@ const WebSocket = require("ws");
 const { handleLogin, handleLogout, handleProtectedAction } = require("./auth");
 const { loadGames, getInitialFilters, handleSearch } = require("./games");
 
+const PORT = process.env.PORT || 8080;
+
 const wss = new WebSocket.Server({
-  port: 8080,
+  port: PORT,
   verifyClient: (info) => {
     const origin = info.origin;
-    const allowedOrigins = ["http://localhost:5500", "http://127.0.0.1:5500"];
+    const allowedOrigins = [
+      "http://localhost:5500",
+      "http://127.0.0.1:5500",
+      "https://frontend-ljor.onrender.com",
+    ];
+
     if (!origin) return true;
     return allowedOrigins.some((allowed) =>
       allowed instanceof RegExp ? allowed.test(origin) : allowed === origin,
     );
   },
 });
-
 let games;
 try {
   games = loadGames("../resources/games.json");
@@ -62,4 +68,4 @@ wss.on("connection", (ws) => {
   ws.on("error", (error) => console.error("WebSocket error:", error));
 });
 
-console.log("WebSocket server running on ws://localhost:8080");
+console.log(`WebSocket server running on ws://localhost:${PORT}`);
