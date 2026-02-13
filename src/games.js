@@ -9,12 +9,10 @@ function loadGames(path) {
 function getInitialFilters(games) {
   const setTag = new Set();
   const setPiat = new Set();
-
   games.forEach((element) => {
     element.tag.forEach((tag) => setTag.add(capitalize(tag)));
     element.piattaforme.forEach((p) => setPiat.add(capitalize(p)));
   });
-
   return {
     tags: Array.from(setTag).sort(),
     piattaforme: Array.from(setPiat).sort(),
@@ -23,8 +21,8 @@ function getInitialFilters(games) {
 
 function handleSearch(ws, games, data) {
   let risultati = games;
-
   const searchTerm = (data.value || data.searchTerm || "").toLowerCase().trim();
+
   if (searchTerm) {
     risultati = risultati.filter(
       (item) =>
@@ -33,21 +31,30 @@ function handleSearch(ws, games, data) {
     );
   }
 
-  if (data.platforms?.length || data.tags?.length) {
-    console.log("RECEIVED TAGS: " + (data.tags.length ? data.tags : "None"));
+  if (data.platforms !== undefined || data.tags !== undefined) {
+    const platforms = data.platforms || [];
+    const tags = data.tags || [];
+    console.log("RECEIVED TAGS: " + (tags.length ? tags : "None"));
     console.log(
-      "RECEIVED PLATFORMS: " +
-        (data.platforms.length ? data.platforms : "None"),
+      "RECEIVED PLATFORMS: " + (platforms.length ? platforms : "None"),
     );
-    const referenceSet = new Set([
-      ...normalizeSet(data.platforms || []),
-      ...normalizeSet(data.tags || []),
-    ]);
-    risultati = getTopMatches(
-      risultati,
-      referenceSet,
-      data.count || risultati.length,
-    );
+
+    if (platforms.length > 0 || tags.length > 0) {
+      const referenceSet = new Set([
+        ...normalizeSet(platforms),
+        ...normalizeSet(tags),
+      ]);
+      risultati = getTopMatches(
+        risultati,
+        referenceSet,
+        data.count || risultati.length,
+      );
+    } else {
+      risultati = risultati.map((game) => {
+        const { common, ...gameWithoutCommon } = game;
+        return gameWithoutCommon;
+      });
+    }
   }
 
   if (data.crossPlay === "si") {
@@ -68,4 +75,8 @@ function capitalize(str) {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
-module.exports = { loadGames, getInitialFilters, handleSearch };
+module.exports = {
+  loadGames,
+  getInitialFilters,
+  handleSearch,
+};
