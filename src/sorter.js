@@ -24,12 +24,13 @@ function calculateSimilarity(game, referenceSet) {
     ...normalizeSet(game.tag || []),
   ]);
   const jaccardScore = jaccard(gameSet, referenceSet);
-  return Math.round(jaccardScore * 100);
+  return jaccardScore;
 }
 
 function sortBySimilarity(games, referenceSet) {
   if (!games || games.length === 0) return games;
   const copy = [...games];
+
   for (const game of copy) {
     game.affinity = calculateSimilarity(game, referenceSet);
     game.common = Array.from(
@@ -38,6 +39,19 @@ function sortBySimilarity(games, referenceSet) {
       ),
     );
   }
+
+  const scores = copy.map((g) => g.affinity);
+  const min = Math.min(...scores);
+  const max = Math.max(...scores);
+
+  for (const game of copy) {
+    if (max === min) {
+      game.affinity = 0;
+    } else {
+      game.affinity = Math.round(((game.affinity - min) / (max - min)) * 100);
+    }
+  }
+
   copy.sort((a, b) => b.affinity - a.affinity);
   return copy;
 }
