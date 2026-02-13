@@ -12,7 +12,7 @@
     "prezzo": "14.99",
     "studio": "Rockstar games",
     "desc": "GTA (Grand Theft Auto) è un gioco d’azione in cui il giocatore controlla un personaggio che vive in una grande città aperta. Si possono guidare auto, moto e altri veicoli, completare missioni, esplorare liberamente la mappa e interagire con tanti personaggi. Il gioco è famoso per la libertà che offre e per le sue storie coinvolgenti legate al mondo del crimine.",
-    "piattaforme": ["PLAYSTATION", "XBOX", "PC", "SWITCH"],
+    "piattaforme": ["PLAYSTATION", "XBOX", "PC"],
     "pegi": "18",
     "anno": "2013",
     "imgPath": "img/GTA.jpeg",
@@ -41,7 +41,14 @@
   },
   {
     "nome": "Fortnite",
-    "tag": ["Building", "Competitive", "Multiplayer", "Shooter", "Strategy"],
+    "tag": [
+      "Building",
+      "Competitive",
+      "Multiplayer",
+      "Shooter",
+      "Strategy",
+      "Fantasy"
+    ],
     "prezzo": "0.00",
     "studio": "Epic Games ",
     "desc": "Fortnite è un videogioco online molto popolare in cui 100 giocatori si sfidano in una grande mappa in modalità “Battle Royale”. L’obiettivo è essere l’ultimo a rimanere in vita. Si possono raccogliere armi, costruire strutture per difendersi e giocare con amici. È famoso per il suo stile colorato, le skin dei personaggi e gli eventi speciali.",
@@ -74,7 +81,8 @@
       "Puzzle",
       "Shooter",
       "Singleplayer",
-      "Story-driven"
+      "Story-driven",
+      "Fantasy"
     ],
     "prezzo": "27.99",
     "studio": "Naughty Dog LLC",
@@ -95,7 +103,8 @@
       "Exploration",
       "Open-world",
       "Soulslike",
-      "Story-driven"
+      "Story-driven",
+      "Fantasy"
     ],
     "prezzo": "59.99",
     "studio": "Santa Monica Studio",
@@ -120,7 +129,8 @@
       "Open-world",
       "Singleplayer",
       "Story-driven",
-      "Survival"
+      "Survival",
+      "Fantasy"
     ],
     "prezzo": "49.99",
     "studio": "CAPCOM Co",
@@ -143,7 +153,8 @@
       "Open-world",
       "Rpg",
       "Soulslike",
-      "Story-driven"
+      "Story-driven",
+      "Fantasy"
     ],
     "prezzo": "59.99",
     "studio": "From Software",
@@ -228,7 +239,8 @@
       "Shooter",
       "Singleplayer",
       "Story-driven",
-      "Strategy"
+      "Strategy",
+      "Fantasy"
     ],
     "prezzo": "69.99",
     "studio": "KOJIMA PRODUCTIONS",
@@ -270,7 +282,8 @@
       "Replayability",
       "Singleplayer",
       "Soulslike",
-      "Story-driven"
+      "Story-driven",
+      "Fantasy"
     ],
     "prezzo": "69.99",
     "studio": "Sucker Punch Productions",
@@ -297,7 +310,8 @@
       "Replayability",
       "Singleplayer",
       "Soulslike",
-      "Story-driven"
+      "Story-driven",
+      "Fantasy"
     ],
     "prezzo": "19.99",
     "studio": "Bethesda Game Studio",
@@ -306,6 +320,248 @@
     "pegi": "18",
     "anno": "2011",
     "imgPath": "img/SKYRIM.jpeg",
+    "crossPlay": false
+  },
+  {
+    "nome": "Ride 6",
+    "tag": [
+      "Competitive",
+      "First-person",
+      "Multiplayer",
+      "Simulation",
+      "Singleplayer",
+      "Sports",
+      "Story-driven"
+    ],
+    "prezzo": "59.99",
+    "studio": "Milestone",
+    "desc": "RIDE 6 non è solo velocità: è ciò che senti in sella alla moto, dove la passione diventa identità e ogni gara è l'occasione di metterti alla prova. È il momento di dimostrare, a te stesso e al mondo, cosa significa davvero essere un motociclista.Colleziona oltre 250 moto di diverse categorie, ora con le nuove Bagger ed Enduro. Lasciati alle spalle l'asfalto e prova il brivido dello sterrato sui nuovi tracciati off-road, per un'esperienza di guida ancora più completa.",
+    "piattaforme": ["PLAYSTATION", "XBOX", "PC"],
+    "pegi": "3",
+    "anno": "2026",
+    "imgPath": "img/RIDE.jpeg",
+    "crossPlay": true
+  },
+  {
+    "nome": "Farming Simulator 25",
+    "tag": [
+      "Co-op",
+      "Creative",
+      "Farming",
+      "Multiplayer",
+      "Open-world",
+      "Simulation",
+      "Singleplayer"
+    ],
+    "prezzo": "20.99",
+    "studio": "Giants Software",
+    "desc": "Farming Simulator 25 vi invita a tuffarvi nella gratificante vita agricola. Scegliete voi se costruire il vostro retaggio da soli o collaborando nel multiplayer: è la vostra fattoria!  Una fattoria tutta vostra",
+    "piattaforme": ["PLAYSTATION", "XBOX", "PC"],
+    "pegi": "3",
+    "anno": "2024",
+    "imgPath": "img/FS.jpeg",
+    "crossPlay": false
+  },
+  {
+    "nome": "Nioh 3",
+    "tag": [
+      "Action",
+      "Combat",
+      "Exploration",
+      "Open-world",
+      "Rpg",
+      "Singleplayer",
+      "Story-driven",
+      "Fantasy",
+      "Soulslike"
+    ],
+    "prezzo": "79.99",
+    "studio": "KOEI TECMO GAMES",
+    "desc": "Conquista il Crogiolo e diventa Shogun.  \"Nioh 3\" è il nuovo gioco dell'oscura serie Action-RPG a tema samurai.",
+    "piattaforme": ["PLAYSTATION", "XBOX", "PC"],
+    "pegi": "18",
+    "anno": "2026",
+    "imgPath": "img/NIOH.jpeg",
+    "crossPlay": false
+  },
+  {
+    "nome": "Final Fantasy 7 Rebirth",
+    "tag": [
+      "Action",
+      "Adventure",
+      "Combat",
+      "Open-world",
+      "Rpg",
+      "Story-driven",
+      "Fantasy"
+    ],
+    "prezzo": "49.99",
+    "studio": "Square Enix",
+    "desc": "Il secondo gioco della trilogia remake di FINAL FANTASY VII.  Scopri questo GdR pluripremiato con risoluzione 4K e 120 FPS, texture e illuminazione migliorate, frequenza di aggiornamento variabile (VRR), NVIDIA DLSS e altro ancora. Il gioco è anche compatibile con il controller DualSense.",
+    "piattaforme": ["PLAYSTATION", "XBOX", "PC", "SWITCH"],
+    "pegi": "18",
+    "anno": "2025",
+    "imgPath": "img/FINAL.jpeg",
+    "crossPlay": false
+  },
+  {
+    "nome": "Moto GP 25",
+    "tag": [
+      "Competitive",
+      "First-person",
+      "Multiplayer",
+      "Simulation",
+      "Singleplayer",
+      "Sports",
+      "Story-driven",
+      "Strategy"
+    ],
+    "prezzo": "59.99",
+    "studio": "Milestone",
+    "desc": "Preparati a scendere in pista con MotoGP25!, Unisciti al Campionato ufficiale nei panni dei tuoi piloti preferiti e domina le moto e i circuiti più iconici della stagione. Vivi l'esperienza di gara più realistica di sempre grazie a Unreal Engine 5, ai MotoGP Stewards che garantiscono battaglie leali, e a un comparto sonoro rivoluzionato registrando le moto ufficiali.",
+    "piattaforme": ["PLAYSTATION", "XBOX", "PC", "SWITCH"],
+    "pegi": "3",
+    "anno": "2025",
+    "imgPath": "img/MOTO.jpeg",
+    "crossPlay": true
+  },
+  {
+    "nome": "The Crew Motorfest",
+    "tag": [
+      "Challenging",
+      "Competitive",
+      "Exploration",
+      "First-person",
+      "Multiplayer",
+      "Open-world",
+      "Simulation",
+      "Sports",
+      "Story-driven"
+    ],
+    "prezzo": "69.99",
+    "studio": "Ubisoft",
+    "desc": "Ti diamo il benvenuto al Motorfest! Nel corso dell'anno, il festival ti farà vivere la migliore esperienza che la cultura automobilistica può offrire.",
+    "piattaforme": ["PLAYSTATION", "XBOX", "PC", ""],
+    "pegi": "12",
+    "anno": "2023",
+    "imgPath": "img/CREW.jpeg",
+    "crossPlay": true
+  },
+  {
+    "nome": "Outlast 2",
+    "tag": [
+      "Action",
+      "Adventure",
+      "Co-op",
+      "Combat",
+      "Indie",
+      "Singleplayer",
+      "Story-driven",
+      "Survival",
+      "Horror",
+      "Fantasy"
+    ],
+    "prezzo": "19.99",
+    "studio": "Red Barrels",
+    "desc": "In Outlast 2 fai la conoscenza di Sullivan Knoth e dei suoi seguaci, che si sono lasciati alle spalle il nostro mondo corrotto per fondare la cittadina di Temple Gate, nel cuore del deserto, lontana da qualsiasi segno di civiltà. Knoth si sta preparando insieme al suo gregge alle tribolazioni della fine dei tempi e tu ti ci ritrovi dentro fino al collo.",
+    "piattaforme": ["PLAYSTATION", "XBOX", "PC"],
+    "pegi": "18",
+    "anno": "2017",
+    "imgPath": "img/OUTLAST.jpeg",
+    "crossPlay": false
+  },
+  {
+    "nome": "Le Mans Ultimate",
+    "tag": [
+      "Competitive",
+      "First-person",
+      "Multiplayer",
+      "Simulation",
+      "Singleplayer",
+      "Sports",
+      "Strategy",
+      "Realistic"
+    ],
+    "prezzo": "39.99",
+    "studio": "Studio 397",
+    "desc": "Le Mans Ultimate è il gioco ufficiale del Campionato del mondo endurance FIA e della 24 ore di Le Mans. Vivi la nuova entusiasmante era delle corse automobilistiche con un livello di dettaglio senza eguali. Le Mans Ultimate offre un'esperienza di gioco coinvolgente per piloti virtuali esperti e alle prime armi e segue l'evoluzione del mondiale FIA reale.",
+    "piattaforme": ["PC"],
+    "pegi": "3",
+    "anno": "2025",
+    "imgPath": "img/MANS.jpeg",
+    "crossPlay": false
+  },
+  {
+    "nome": "Silent Hill 2",
+    "tag": [
+      "Action",
+      "Adventure",
+      "Combat",
+      "Exploration",
+      "Indie",
+      "Singleplayer",
+      "Story-driven",
+      "Survival",
+      "Horror"
+    ],
+    "prezzo": "69.99",
+    "studio": "Bloober Team",
+    "desc": "Dopo aver ricevuto una lettera dalla moglie defunta, James si dirige dove un tempo avevano condiviso tanti ricordi, nella speranza di rivederla un'ultima volta: Silent Hill. Giunto nei pressi del lago, James incontra una donna stranamente simile a lei",
+    "piattaforme": ["PLAYSTATION", "XBOX", "PC"],
+    "pegi": "18",
+    "anno": "2024",
+    "imgPath": "img/SILENT.jpeg",
+    "crossPlay": false
+  },
+  {
+    "nome": "Fallout 4",
+    "tag": [
+      "Action",
+      "Adventure",
+      "Building",
+      "Co-op",
+      "Combat",
+      "Crafting",
+      "Creative",
+      "Exploration",
+      "Farming",
+      "First-person",
+      "Indie",
+      "Multiplayer",
+      "Open-world",
+      "Rpg",
+      "Singleplayer",
+      "Story-driven",
+      "Survival"
+    ],
+    "prezzo": "19.99",
+    "studio": "Bethesda Game Studios",
+    "desc": "Fallout 4 è un gioco di ruolo d’azione altamente personalizzabile in stile sandbox. Se ami i giochi strettamente controllati e disciplinati, questo potrebbe non essere adatto a te in quanto hai scelta e visione in praticamente in tutto quel che vedi, fai e nei viaggi che intraprendi.",
+    "piattaforme": ["PLAYSTATION", "XBOX", "PC", "SWITCH"],
+    "pegi": "18",
+    "anno": "2015",
+    "imgPath": "img/FALLOUT.jpeg",
+    "crossPlay": false
+  },
+  {
+    "nome": "Celeste",
+    "tag": [
+      "Challenging",
+      "Cozy",
+      "Indie",
+      "Platformer",
+      "Precision-platforming",
+      "Replayability",
+      "Singleplayer",
+      "Story-driven"
+    ],
+    "prezzo": "19.99",
+    "studio": "Maddy Makes Games",
+    "desc": "Aiuta Madeline a sopravvivere ai suoi demoni interiori nel suo viaggio verso la vetta della Celeste Mountain, in questo platformer dai controlli precisissimi creato dagli autori di TowerFall. Affronta centinaia di sfide realizzate a mano, svela segreti insidiosi e ricomponi il mistero della montagna.",
+    "piattaforme": ["PC", "Playstation", "Switch", "Xbox"],
+    "pegi": "7",
+    "anno": "2018",
+    "imgPath": "img/CELESTE.jpeg",
     "crossPlay": false
   }
 ]
