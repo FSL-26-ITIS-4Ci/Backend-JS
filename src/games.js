@@ -24,11 +24,12 @@ function handleSearch(ws, games, data) {
   const searchTerm = (data.value || data.searchTerm || "").toLowerCase().trim();
 
   if (searchTerm) {
-    risultati = risultati.filter(
-      (item) =>
-        item.nome.toLowerCase().trim().includes(searchTerm) ||
-        item.desc.toLowerCase().includes(searchTerm),
-    );
+    const searchTerms = searchTerm.split(" ");
+
+    risultati = risultati.filter((item) => {
+      const itemText = `${item.nome} ${item.desc}`.toLowerCase();
+      return searchTerms.some((term) => itemText.includes(term));
+    });
   }
 
   if (data.platforms !== undefined || data.tags !== undefined) {
