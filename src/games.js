@@ -66,6 +66,11 @@ function handleSearch(ws, games, data) {
       return !item.crossPlay;
     });
   }
+  if (data.pegi && data.pegi != "null") {
+    risultati = risultati.filter((item) => {
+      return item.pegi === data.pegi;
+    });
+  }
 
   ws.send(JSON.stringify({ type: data.type, value: risultati }));
 }
