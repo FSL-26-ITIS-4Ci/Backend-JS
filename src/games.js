@@ -52,8 +52,8 @@ function handleSearch(ws, games, data) {
       );
     } else {
       risultati = risultati.map((game) => {
-        const { common, ...gameWithoutCommon } = game;
-        return gameWithoutCommon;
+        const { common, affinity, ...cleanGame } = game;
+        return cleanGame;
       });
     }
   }
