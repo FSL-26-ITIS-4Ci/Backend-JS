@@ -1,8 +1,6 @@
 const bcrypt = require("bcrypt");
 const crypto = require("crypto");
-
-const ADMIN_PASSWORD_HASH =
-  "$2a$12$UxNkIvOzISqA.Ne5ecRNMO1SK9v7FbTKUvjVGTBzZCQ1oWAScEdlC";
+const config = require("../resources/config.json");
 
 const sessions = new Set();
 
@@ -28,7 +26,7 @@ async function handleLogin(ws, message) {
     return;
   }
 
-  const isValidPassword = await bcrypt.compare(password, ADMIN_PASSWORD_HASH);
+  const isValidPassword = await bcrypt.compare(password, config.admin_password);
 
   if (!isValidPassword) {
     ws.send(
