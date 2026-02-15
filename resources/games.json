@@ -563,5 +563,24 @@
     "anno": "2018",
     "imgPath": "img/CELESTE.jpeg",
     "crossPlay": false
+  },
+  {
+    "nome": "Life is Strange: Reunion",
+    "tag": [
+      "Action",
+      "Adventure",
+      "Choices",
+      "Cozy",
+      "Replayability",
+      "Story-driven"
+    ],
+    "prezzo": "40",
+    "studio": "Square Enix",
+    "desc": "La saga di Max e Chloe e il destino di Caledon sono nelle tue mani! Gioca nei panni di entrambe mentre una storia inedita si sviluppa verso un finale epico. L'incendio costringerà Max e Chloe a prendere decisioni devastanti. Riusciranno a trovare un futuro insieme... prima che tutto bruci?",
+    "piattaforme": ["Pc", "Playstation", "Xbox"],
+    "pegi": "16",
+    "anno": "2026",
+    "imgPath": "img/LISR.jpeg",
+    "crossPlay": false
   }
 ]
