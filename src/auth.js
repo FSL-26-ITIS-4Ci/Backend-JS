@@ -4,7 +4,7 @@ const crypto = require("crypto");
 const ADMIN_PASSWORD_HASH =
   "$2a$12$UxNkIvOzISqA.Ne5ecRNMO1SK9v7FbTKUvjVGTBzZCQ1oWAScEdlC";
 
-const sessions = new Map();
+const sessions = new Set();
 
 function generateToken() {
   return crypto.randomBytes(32).toString("hex");
@@ -16,6 +16,7 @@ function verifyToken(token) {
 
 async function handleLogin(ws, message) {
   const { password } = message;
+
   if (!password) {
     ws.send(
       JSON.stringify({
@@ -28,6 +29,7 @@ async function handleLogin(ws, message) {
   }
 
   const isValidPassword = await bcrypt.compare(password, ADMIN_PASSWORD_HASH);
+
   if (!isValidPassword) {
     ws.send(
       JSON.stringify({
@@ -40,7 +42,7 @@ async function handleLogin(ws, message) {
   }
 
   const token = generateToken();
-  sessions.set(token, true);
+  sessions.add(token);
   ws.send(JSON.stringify({ type: "login_response", success: true, token }));
 }
 
@@ -61,22 +63,8 @@ function handleLogout(ws, message) {
   }
 }
 
-function handleProtectedAction(ws, message) {
-  const { token, data } = message;
-
-  if (!verifyToken(token)) {
-    ws.send(
-      JSON.stringify({ type: "error", message: "Unauthorized - please login" }),
-    );
-    return;
-  }
-
-  ws.send(JSON.stringify({ type: "protected_response", success: true, data }));
-}
-
 module.exports = {
   handleLogin,
   handleLogout,
-  handleProtectedAction,
   verifyToken,
 };

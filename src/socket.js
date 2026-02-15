@@ -54,9 +54,6 @@ wss.on("connection", (ws) => {
         case "logout":
           handleLogout(ws, data);
           break;
-        case "protected_action":
-          handleProtectedAction(ws, data);
-          break;
         default:
           console.log("ERROR: Invalid request");
       }
