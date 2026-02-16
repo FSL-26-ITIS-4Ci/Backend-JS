@@ -2,6 +2,9 @@ const { readGames, getTopMatches, normalizeSet } = require("./sorter");
 
 function loadGames(path) {
   const games = readGames(path);
+  games.sort((a, b) =>
+    a.nome.localeCompare(b.nome, undefined, { sensitivity: "base" }),
+  );
   console.log(`Loaded ${games.length} games`);
   return games;
 }

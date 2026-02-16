@@ -676,5 +676,25 @@
     "anno": "2011",
     "imgPath": "img/MINECRAFT.jpeg",
     "crossPlay": true
+  },
+  {
+    "nome": "The Last of Us Part I",
+    "tag": [
+      "Action",
+      "Adventure",
+      "Horror",
+      "Realistic",
+      "Shooter",
+      "Story-driven",
+      "Survival"
+    ],
+    "prezzo": "60",
+    "studio": "Naughty Dog LLC",
+    "desc": "Scopri il pluripremiato titolo che ha ispirato la famosa serie televisiva. Guida Joel ed Ellie attraverso un'America post-apocalittica, e incontra indimenticabili alleati e nemici in The Last of Us™.",
+    "piattaforme": ["Pc", "Playstation"],
+    "pegi": "18",
+    "anno": "2023",
+    "imgPath": "img/LASTPT1.jpeg",
+    "crossPlay": false
   }
 ]
