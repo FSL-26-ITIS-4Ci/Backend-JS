@@ -603,5 +603,48 @@
     "anno": "2020",
     "imgPath": "img/ULTRAKILL.jpeg",
     "crossPlay": false
+  },
+  {
+    "nome": "Pizza Tower",
+    "tag": [
+      "Adventure",
+      "Challenging",
+      "Indie",
+      "Platformer",
+      "Replayability",
+      "Singleplayer"
+    ],
+    "prezzo": "19.50",
+    "studio": "Tour De Pizza",
+    "desc": "Pizza Tower è un platformer 2D frenetico che punta tutto su movimento, esplorazione e record di punteggio. È caratterizzato da una pixel art molto stilizzata, ispirata ai cartoni animati degli anni '90, e da una colonna sonora carichissima.",
+    "pegi": "12",
+    "anno": "2023",
+    "imgPath": "img/PIZZATOWER.jpeg",
+    "piattaforme": ["Pc", "Switch", "Playstation", "Xbox"],
+    "crossPlay": false
+  },
+  {
+    "nome": "Cult of the Lamb",
+    "tag": [
+      "Action",
+      "Adventure",
+      "Co-op",
+      "Combat",
+      "Cozy",
+      "Crafting",
+      "Farming",
+      "Indie",
+      "Replayability",
+      "Strategy",
+      "Survival"
+    ],
+    "prezzo": "23",
+    "studio": "Massive Monster",
+    "desc": "Crea la tua setta in una terra di falsi profeti e avventurati in regioni misteriose per costruire una comunità di seguaci del bosco, diffondere il tuo Verbo e diventare l'unica vera fede.",
+    "piattaforme": ["Pc", "Playstation", "Switch", "Xbox"],
+    "pegi": "12",
+    "anno": "2022",
+    "imgPath": "img/LAMB.jpeg",
+    "crossPlay": false
   }
 ]
