@@ -175,7 +175,8 @@
       "Open-world",
       "Rpg",
       "Shooter",
-      "Story-driven"
+      "Story-driven",
+      "Choices"
     ],
     "prezzo": "29.99",
     "studio": "CD PROJEKT RED",
@@ -646,5 +647,34 @@
     "anno": "2022",
     "imgPath": "img/LAMB.jpeg",
     "crossPlay": false
+  },
+  {
+    "nome": "Minecraft: Java & Bedrock Edition",
+    "tag": [
+      "Adventure",
+      "Building",
+      "Co-op",
+      "Combat",
+      "Cozy",
+      "Crafting",
+      "Creative",
+      "Exploration",
+      "Farming",
+      "First-person",
+      "Multiplayer",
+      "Open-world",
+      "Replayability",
+      "Simulation",
+      "Singleplayer",
+      "Survival"
+    ],
+    "prezzo": "30",
+    "studio": "Mojang Studios",
+    "desc": "Minecraft è un gioco in cui puoi costruire usando dei blocchi e andare all'avventura.  Esplora mondi generati casualmente e costruisci cose grandiose, dalla più semplice delle case a maestosi castelli. Gioca in modalità creativa con risorse illimitate o scava in profondità nella modalità sopravvivenza, in cui dovrai creare armi e armature per respingere gli attacchi di mostri pericolosi.",
+    "piattaforme": ["Mobile", "Pc", "Playstation", "Switch", "Xbox"],
+    "pegi": "7",
+    "anno": "2011",
+    "imgPath": "img/MINECRAFT.jpeg",
+    "crossPlay": true
   }
 ]
