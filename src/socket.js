@@ -1,5 +1,5 @@
 const WebSocket = require("ws");
-const { handleLogin, handleLogout, handleProtectedAction } = require("./auth");
+const { handleLogin, handleLogout } = require("./auth");
 const { loadGames, getInitialFilters, handleSearch } = require("./games");
 
 const PORT = process.env.PORT || 8080;
