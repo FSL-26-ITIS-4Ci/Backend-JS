@@ -582,5 +582,26 @@
     "anno": "2026",
     "imgPath": "img/LISR.jpeg",
     "crossPlay": false
+  },
+  {
+    "nome": "ULTRAKILL",
+    "tag": [
+      "Action",
+      "Challenging",
+      "Combat",
+      "First-person",
+      "Indie",
+      "Replayability",
+      "Shooter",
+      "Singleplayer"
+    ],
+    "prezzo": "24",
+    "studio": "New Blood Interactive",
+    "desc": "ULTRAKILL è un FPS frenetico, ultraviolento e vecchia scuola che fonde sparatutto classici come Quake, titoli moderni come Doom (2016) e character action game come Devil May Cry. L'umanità si è estinta e gli unici esseri rimasti sulla terra sono macchine alimentate a sangue. Ma ora che il sangue in superficie sta iniziando a scarseggiare... Le macchine si stanno sfidando in una corsa verso le profondità dell'Inferno in cerca di altro.",
+    "piattaforme": ["Pc"],
+    "pegi": "16",
+    "anno": "2020",
+    "imgPath": "img/ULTRAKILL.jpeg",
+    "crossPlay": false
   }
 ]
