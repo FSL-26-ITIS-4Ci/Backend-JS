@@ -637,7 +637,8 @@
       "Indie",
       "Replayability",
       "Strategy",
-      "Survival"
+      "Survival",
+      "Roguelike/lite"
     ],
     "prezzo": "23",
     "studio": "Massive Monster",
@@ -695,6 +696,47 @@
     "pegi": "18",
     "anno": "2023",
     "imgPath": "img/LASTPT1.jpeg",
+    "crossPlay": false
+  },
+  {
+    "nome": "Death Stranding",
+    "tag": [
+      "Action",
+      "Adventure",
+      "Exploration",
+      "Horror",
+      "Open-world",
+      "Story-driven",
+      "Survival"
+    ],
+    "prezzo": "60",
+    "studio": "KOJIMA PRODUCTIONS",
+    "desc": "Dal leggendario Hideo Kojima arriva un’esperienza di gioco che definisce il genere. Nei panni di Sam Bridges, dovrai dare speranza all’umanità mettendo in contatto gli ultimi sopravvissuti di un’America decimata.",
+    "piattaforme": ["Pc", "Playstation", "Xbox"],
+    "pegi": "18",
+    "anno": "2020",
+    "imgPath": "img/DS1.jpeg",
+    "crossPlay": false
+  },
+  {
+    "nome": "Balatro",
+    "tag": [
+      "Challenging",
+      "Cozy",
+      "Indie",
+      "Puzzle",
+      "Replayability",
+      "Singleplayer",
+      "Strategy",
+      "Roguelike/lite"
+    ],
+    "prezzo": "14",
+    "studio": "LocalThunk",
+    "desc": "Balatro è un gioco di costruzione di mazzi roguelike ispirato al poker, che si basa sulla creazione di forti sinergie per realizzare grandi vincite.   Combina mani di poker valide con jolly unici per creare varie sinergie e costruzioni. Guadagna abbastanza fiche per battere infidi bui, mentre riveli mazzi e mani bonus nascosti man mano che avanzi. Avrai bisogno di qualsiasi vantaggio disponibile per raggiungere il buio boss, battere l'ante finale e assicurarti la vittoria.",
+    "piattaforme": ["Mobile", "Pc", "Playstation", "Switch", "Xbox"],
+    "pegi": "12",
+    "anno": "2024",
+    "imgPath": "img/BALATRO.jpeg",
     "crossPlay": false
   }
 ]
