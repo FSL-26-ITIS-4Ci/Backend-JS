@@ -14,6 +14,7 @@ function jaccard(setA, setB) {
   if (a.size === 0 && b.size === 0) return 0.0;
   const intersection = new Set([...a].filter((x) => b.has(x)));
   const union = new Set([...a, ...b]);
+
   return intersection.size / union.size;
 }
 
@@ -23,8 +24,16 @@ function calculateSimilarity(game, referenceSet) {
     ...normalizeSet(game.piattaforme || []),
     ...normalizeSet(game.tag || []),
   ]);
-  const jaccardScore = jaccard(gameSet, referenceSet);
-  return jaccardScore;
+
+  if (referenceSet.size === 0) return 0;
+
+  const intersection = new Set([...gameSet].filter((x) => referenceSet.has(x)));
+  const union = new Set([...gameSet, ...referenceSet]);
+
+  const jaccardScore = union.size === 0 ? 0 : intersection.size / union.size;
+  const coverageScore = intersection.size / referenceSet.size;
+
+  return 0.4 * jaccardScore + 0.6 * coverageScore;
 }
 
 function sortBySimilarity(games, referenceSet) {
@@ -40,6 +49,8 @@ function sortBySimilarity(games, referenceSet) {
     );
   }
 
+  copy.sort((a, b) => b.affinity - a.affinity);
+
   const scores = copy.map((g) => g.affinity);
   const min = Math.min(...scores);
   const max = Math.max(...scores);
@@ -52,7 +63,6 @@ function sortBySimilarity(games, referenceSet) {
     }
   }
 
-  copy.sort((a, b) => b.affinity - a.affinity);
   return copy;
 }
 
