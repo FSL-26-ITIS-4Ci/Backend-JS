@@ -12,7 +12,7 @@ const wss = new WebSocket.Server({
       "http://localhost:5500",
       "http://127.0.0.1:5500",
       "https://frontend-ljor.onrender.com",
-      "https://findyourgame.izzoserver.top/",
+      "https://findyourgame.izzoserver.top",
     ];
 
     if (!origin) return true;
