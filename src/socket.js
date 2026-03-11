@@ -11,7 +11,7 @@ const wss = new WebSocket.Server({
     const allowedOrigins = [
       "http://localhost:5500",
       "http://127.0.0.1:5500",
-      "https://frontend-ljor.onrender.com",
+      "https://findyourgame.up.railway.app",
       "https://findyourgame.izzoserver.top",
     ];
 
